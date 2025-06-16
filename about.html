@@ -82,6 +82,16 @@
         // Piccolo script per aggiornare l'anno nel footer (opzionale)
         document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>
+$(document).ready(function() {
+  $('.hamburger').click(function() {
+    $('nav ul').toggleClass('open');
+  });
+
+  // Chiudi il menu quando clicchi su un link (utile su mobile)
+  $('nav ul li a').click(function() {
+    $('nav ul').removeClass('open');
+  });
+});
 
 </body>
 </html>
