@@ -1,4 +1,3 @@
-// Scroll button
 var btn = $('#button');
 
 $(window).scroll(function() {
@@ -14,14 +13,13 @@ btn.on('click', function(e) {
   $('html, body').animate({scrollTop:0}, '300');
 });
 
-// Hamburger menu toggle con delega
-document.addEventListener('click', function(e) {
-    if (e.target.closest('.hamburger')) {
-        const navLinks = document.querySelector('nav ul');
-        if (navLinks) {
-            navLinks.classList.toggle('open');
-        }
-    }
+
+// Hamburger menu toggle
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('nav ul');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
 });
 
 // Fade-in effect on scroll
@@ -38,7 +36,4 @@ const observer = new IntersectionObserver(entries => {
 
 sections.forEach(section => {
     observer.observe(section);
-  console.log('hamburger:', hamburger);
-console.log('navLinks:', navLinks);
-
 });
